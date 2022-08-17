@@ -25,7 +25,7 @@ hour.each(function(){
     if (workTime < currentTime) {
         console.log("past")
         // current time class gets removed
-        $()
+        // $("div").addClass("past")
         // then past time class get added
     }
     else if (workTime > currentTime) {
