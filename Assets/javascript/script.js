@@ -1,12 +1,3 @@
-// add column to control the time slots
-// add row class to the column using Jquery
-
-// create funcitonality to save times to local storage 
-
-// use moment.js to make the past times grey
-
-//use moment to make the future times green and the closest hour interval red
-
 var currentTime = parseInt(moment().hour())
 var currentDay = $("#currentDay")
 var hour = $(".hour");
@@ -25,17 +16,19 @@ hour.each(function(){
     if (workTime < currentTime) {
         console.log("past")
         // current time class gets removed
-        // $("div").addClass("past")
+        $("div").addClass("past");
         // then past time class get added
     }
     else if (workTime > currentTime) {
         console.log("future")
         //add future class to the added event
+        $("div").addClass("future")
     }
 
     else {
         console.log("present")
         //future class is removed
+        $("div").addClass("present")
         //present class is added
     }
 })
