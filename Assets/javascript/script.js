@@ -11,25 +11,25 @@ currentDay.text(moment().format('dddd, LL'));
 
 
 hour.each(function(){
-    var workTime = parseInt($(this).attr("data-id"))
-    console.log(workTime)
+    var workTime = parseInt($(this).next().attr("data-id"))
+    // console.log($(this).next().addClass("past"))
     if (workTime < currentTime) {
-        console.log("past")
         // current time class gets removed
-        $("div").addClass("past");
+        $(this).next().addClass("past");
         // then past time class get added
+        console.log("past");
     }
     else if (workTime > currentTime) {
-        console.log("future")
         //add future class to the added event
-        $("div").addClass("future")
+        $(this).next().addClass("future");
+        console.log("future");
     }
 
-    else {
-        console.log("present")
+    else if (workTime === currentTime){
         //future class is removed
-        $("div").addClass("present")
+        $(this).next().addClass("present");
         //present class is added
+        console.log("present");
     }
 })
 
@@ -37,12 +37,12 @@ hour.each(function(){
 $(".description").on("click", function() {
     var text = $(this).text().trim();
     
-    var textInput = $("<textarea>").addClass("col-10 event-description").val(text);
+    var textInput = $("<textarea>").addClass("col-10 description").val(text);
 
     $(this).replaceWith(textInput);
 
     textInput.trigger("focus");
-
+    console.log(textInput.value)
 
 })
 
