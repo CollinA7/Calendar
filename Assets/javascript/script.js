@@ -3,6 +3,7 @@ var currentDay = $("#currentDay")
 var hour = $(".hour");
 var calendarEvent = {};
 
+
 console.log(moment().hour())
 
 currentDay.text(moment().format('dddd, LL'));
@@ -37,10 +38,8 @@ $(".description").on("input", function() {
     // console.log(text)
 
     var calendarEvent = {text}
-    var textInput = JSON.stringify(calendarEvent);
-    console.log(calendarEvent)
     
-
+    console.log(calendarEvent)
 });
 
 $(".saveBtn").click(function(){
@@ -50,5 +49,19 @@ $(".saveBtn").click(function(){
 });
 
 var saveEvent = function() {
-    localStorage.setItem("calendarEvent", JSON.stringify(calendarEvent));
+
+    var eventInput = {text};
+    var storage = localStorage.getItem("user-input");
+    if(storage == null) {
+        var storageArray = []
+        storageArray.push(eventInput)
+        localStorage.setItem("user-input", JSON.stringify(storageArray));
+    }
+    else {
+        var storageArray = JSON.parse(storage)
+        storageArray.push(eventInput)
+        localStorage.setItem("user-input", JSON.stringify(storageArray));
+    }
+
+
 }
