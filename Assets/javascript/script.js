@@ -9,6 +9,7 @@ console.log(moment().hour())
 currentDay.text(moment().format('dddd, LL'));
 
 
+//  this function identifies each data-id attribute and compares it to the current hour
 hour.each(function(){
     var workTime = parseInt($(this).next().attr("data-id"))
     
@@ -42,12 +43,14 @@ $(".description").on("input", function() {
     console.log(calendarEvent)
 });
 
+// This is the JQuery listener for the save-button element
 $(".saveBtn").click(function(){
     
     console.log("saveBtn clicked");
     saveEvent();
 });
 
+// This function is intended to push the local text to the 
 var saveEvent = function() {
 
     var eventInput = {text};
