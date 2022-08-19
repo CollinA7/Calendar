@@ -6,4 +6,4 @@
 
 - The color changes of the events added
 
-<img src="assets\images\wd-frontpage.jpg">
+<img src="assets\images\wd-frontpage.JPG">
