@@ -7,3 +7,6 @@
 - The color changes of the events added
 
 <img src="Assets/images/wd-frontpage.jpg">
+
+# here is the link to the deployed webpage
+https://collina7.github.io/Calendar/
